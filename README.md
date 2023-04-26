@@ -1,0 +1,2 @@
+Criar um projeto Spring Boot que irá Consumir uma API externa: https://openweathermap.org/api/one-call-3
+Realizar uma chamada à API de previsão do tempo do OpenWeatherMap para obter dados meteorológicos com base em uma determinada latitude e longitude.
