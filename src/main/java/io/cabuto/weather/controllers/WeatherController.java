@@ -20,8 +20,8 @@ public class WeatherController {
     }
 
     @GetMapping
-    public ResponseEntity<WeatherData> getWeatherData(@RequestParam("lat") String lat,
-                                                      @RequestParam("long") String lon) {
+    public ResponseEntity<WeatherData> getWeatherData(@RequestParam("lat") double lat,
+                                                      @RequestParam("long") double lon) {
         WeatherData weatherData = weatherService.getWeatherData(lat, lon);
         return ResponseEntity.ok(weatherData);
     }
@@ -37,6 +37,6 @@ public class WeatherController {
 //4) @Autowired - anotação que informa ao Spring que ele deve injetar uma instância de WeatherService no construtor do controlador.
 //5) public WeatherController(WeatherService weatherService) { ... } - o construtor da classe, que recebe uma instância de WeatherService e armazena em uma variável de instância para ser usada posteriormente.
 //6) @GetMapping - uma anotação que indica que este método responde a requisições HTTP do tipo GET.
-//7) public ResponseEntity<WeatherData> getWeatherData(@RequestParam("lat") String lat, @RequestParam("long") String lon) - o método que será chamado quando um cliente fizer uma requisição HTTP GET para a rota /clima. Ele recebe dois parâmetros lat e lon, que são extraídos da URL da requisição usando a anotação @RequestParam.
+//7) public ResponseEntity<WeatherData> getWeatherData(@RequestParam("lat") double lat, @RequestParam("long") double lon) - o método que será chamado quando um cliente fizer uma requisição HTTP GET para a rota /clima. Ele recebe dois parâmetros lat e lon, que são extraídos da URL da requisição usando a anotação @RequestParam.
 //8) WeatherData weatherData = weatherService.getWeatherData(lat, lon); - chamada ao método getWeatherData do serviço WeatherService, passando os parâmetros lat e lon recebidos na requisição.
 //9) return ResponseEntity.ok(weatherData); - retorna uma resposta HTTP com o status 200 OK e o objeto WeatherData retornado pelo serviço WeatherService no corpo da resposta. A classe ResponseEntity é usada para permitir que o controlador especifique o status HTTP, cabeçalhos e corpo da resposta de forma mais flexível.

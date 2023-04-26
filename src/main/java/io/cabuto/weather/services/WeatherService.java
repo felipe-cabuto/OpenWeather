@@ -14,7 +14,7 @@ public interface WeatherService {
     @Value("${openweathermap.api.key}")
     private String apiKey;
 
-    public WeatherData getWeatherData(String lat, String lon) {
+    public WeatherData getWeatherData(double lat, double lon) {
         String url = String.format("%s?lat=%s&lon=%s&appid=%s&units=metric", apiUrl, lat, lon, apiKey);
 
         RestTemplate restTemplate = new RestTemplate();
