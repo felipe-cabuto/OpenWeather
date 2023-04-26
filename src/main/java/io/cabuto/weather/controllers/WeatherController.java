@@ -1,5 +1,6 @@
 package io.cabuto.weather.controllers;
 
+import io.cabuto.weather.entities.WeatherData;
 import io.cabuto.weather.services.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class WeatherController {
 
 // A classe WeatherController é responsável por lidar com as requisições na API.
 // Definir o endpoint que receberá os parâmetros de latitude e longitude e que será responsável por consumir a API externa e retornar os dados do clima em um objeto.
-// A classe WeatherController irá gerenciar as requisições HTTP na rota /clima.
+// Esta classe irá gerenciar as requisições HTTP na rota /clima.
 
 //1) @RestController - anotação que informa ao Spring que esta classe é um controlador REST, ou seja, que é responsável por expor endpoints HTTP que retornam dados em formato JSON.
 //2) @RequestMapping("/clima") - anotação que define o caminho base para todas as rotas definidas nesta classe. Neste caso, todas as rotas gerenciadas por este controlador terão como prefixo /clima.
