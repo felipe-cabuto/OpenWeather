@@ -1,6 +1,7 @@
 package io.cabuto.weather.services;
 
 import io.cabuto.weather.entities.WeatherData;
+import lombok.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -18,13 +19,12 @@ public class WeatherService {
         String url = String.format("%s?lat=%s&lon=%s&appid=%s&units=metric", apiUrl, lat, lon, apiKey);
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<WeatherApiResponse> response = restTemplate.getForEntity(url, WeatherApiResponse.class);
+        WeatherApiResponse weatherApiResponse = restTemplate.getForObject(url, WeatherApiResponse.class);
 
-        if (response.getStatusCode() != HttpStatus.OK) {
+        if (weatherApiResponse == null) {
             throw new RuntimeException("Failed to get weather data");
         }
 
-        WeatherApiResponse weatherApiResponse = response.getBody();
         WeatherData weatherData = new WeatherData();
         weatherData.setLat(weatherApiResponse.getLat());
         weatherData.setLon(weatherApiResponse.getLon());
