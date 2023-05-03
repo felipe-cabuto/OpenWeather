@@ -15,6 +15,7 @@ public class WeatherData {
     private int humidity;
 }
 
+// PARTE 3
 // Classe que representa dados de Clima com os seguintes atributos:
 
 //  - latitude (lat)

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public interface WeatherService {
+public class WeatherService {
     @Value("${openweathermap.api.url}")
     private String apiUrl;
 
@@ -39,6 +39,7 @@ public interface WeatherService {
     }
 }
 
+// PARTE 2
 // A classe WeatherService é responsável por essa chamada e por transformar a resposta da API em um objeto WeatherData, que é retornado ao chamador do método.
 
 //1) @Service - anotação que informa ao Spring que esta classe é um serviço, ou seja, que ela é responsável por executar uma determinada lógica de negócios em um contexto específico.

@@ -27,6 +27,7 @@ public class WeatherController {
     }
 }
 
+// PARTE 1
 // A classe WeatherController é responsável por lidar com as requisições na API.
 // Definir o endpoint que receberá os parâmetros de latitude e longitude e que será responsável por consumir a API externa e retornar os dados do clima em um objeto.
 // Esta classe irá gerenciar as requisições HTTP na rota /clima.

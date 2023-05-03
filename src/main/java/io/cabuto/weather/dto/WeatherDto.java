@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WeatherDto {
-
     private double lat;
     private double lon;
     private LocalDateTime sunrise;
