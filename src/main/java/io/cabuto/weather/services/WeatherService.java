@@ -5,6 +5,8 @@ import lombok.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDateTime;
+
 @Service
 public class WeatherService {
     @Value("${openweathermap.api.url}")
@@ -26,8 +28,8 @@ public class WeatherService {
         WeatherData weatherData = new WeatherData();
         weatherData.setLat(weatherApiResponse.getLat());
         weatherData.setLon(weatherApiResponse.getLon());
-        weatherData.setSunrise(new Date(weatherApiResponse.getCurrent().getSunrise() * 1000));
-        weatherData.setSunset(new Date(weatherApiResponse.getCurrent().getSunset() * 1000));
+        weatherData.setSunrise(new LocalDateTime(weatherApiResponse.getCurrent().getSunrise() * 1000));
+        weatherData.setSunset(new LocalDateTime(weatherApiResponse.getCurrent().getSunset() * 1000));
         weatherData.setTemp(weatherApiResponse.getCurrent().getTemp());
         weatherData.setFeelsLike(weatherApiResponse.getCurrent().getFeelsLike());
         weatherData.setPressure(weatherApiResponse.getCurrent().getPressure());
