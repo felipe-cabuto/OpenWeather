@@ -1,7 +1,6 @@
 package io.cabuto.weather.entities;
 
 import lombok.Data;
-
 import java.time.LocalDateTime;
 @Data
 public class WeatherData {

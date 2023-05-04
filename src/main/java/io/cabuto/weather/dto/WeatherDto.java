@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -14,8 +13,8 @@ import java.time.LocalDateTime;
 public class WeatherDto {
     private double lat;
     private double lon;
-    private LocalDateTime sunrise;
-    private LocalDateTime sunset;
+    private Date sunrise;
+    private Date sunset;
     private double temp;
     private double feelsLike;
     private double pressure;

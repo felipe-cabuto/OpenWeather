@@ -11,43 +11,10 @@ public class WeatherApiResponse {
     private Coordinates coordinates;
 
     @JsonProperty("sys")
-    private SysInfo sysInfo;
+    private Sys sys;
 
     @JsonProperty("main")
     private WeatherInfo weatherInfo;
-
-    public static class Coordinates {
-        @JsonProperty("lat")
-        private double latitude;
-
-        @JsonProperty("lon")
-        private double longitude;
-
-    }
-
-    public static class SysInfo {
-        @JsonProperty("sunrise")
-        private long sunrise;
-
-        @JsonProperty("sunset")
-        private long sunset;
-
-    }
-
-    public static class WeatherInfo {
-        @JsonProperty("temp")
-        private double temperature;
-
-        @JsonProperty("feels_like")
-        private double feelsLike;
-
-        @JsonProperty("pressure")
-        private int pressure;
-
-        @JsonProperty("humidity")
-        private int humidity;
-
-    }
 }
 
 // PARTE 4
